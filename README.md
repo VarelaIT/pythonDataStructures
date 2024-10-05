@@ -21,9 +21,15 @@ len(gretting) #>>> 12
 Looping through strings
 ```python
 index = 0
-while index < len(gretting):
+while index < len(greetting):
     letter = fruit[index]
+    index = index + 1
     print(letter) 
+
+for letter in greetting:
+    print(letter)
+
+#both loops will print: 
 #>> h
 #>> e
 #>> l
