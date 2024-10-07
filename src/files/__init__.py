@@ -1,5 +1,8 @@
 
-section = """
+from typing import List
+
+
+preContent = """
 ## Files
 
 In Python you can obtain the instance of a `file` by using the `open` built-in function.
@@ -21,12 +24,12 @@ Mode is an optional string that specifies the mode in which the file is opened. 
 |Char|Meaning|
 |----|-------|
 |'r'|open for reading (default)|
-|'w'| open for writing, truncating the file first|
-|'x'| open for exclusive creation, failing if the file already exists|
-|'a'| open for writing, appending to the end of file if it exists|
-|'b'| binary mode|
-|'t'| text mode (default)|
-|'+'| open for updating (reading and writing)|
+|'w'|open for writing, truncating the file first|
+|'x'|open for exclusive creation, failing if the file already exists|
+|'a'|open for writing, appending to the end of file if it exists|
+|'b'|binary mode|
+|'t'|text mode (default)|
+|'+'|open for updating (reading and writing)|
 
 Example of the code that writes this document:
 ```python
@@ -37,11 +40,51 @@ try:
 except:
     print("Error: can't read or write file.")
 ```
+
+### Reading files
+
+`File.read()` Reads a whole file returning a string.
+
+`File.readlines()` Reads the file returning an array of a string per line.
+```python
+fHanddler = open(fileName, "r")
+lines = fHanddler.readlines()
+for line in lines:
+    print(line)
+```
+
+Here's the output of a function that reads the first 10 lines of this very file:
+```md
+"""
+subContent = """
+```
+
 """
 
-def writeToFile(content: str):
+def getSectionContent(fileName: str, preContent: str, subContent: str)-> str:
+    result = preContent
+    lines = readFile(fileName)
+    index = 0
+    linesCount = len(lines)
+    limit = 10
+    if(linesCount < limit):
+        limit = linesCount
+    while(index < limit):
+        result += lines[index]
+        index += 1
+    return result + subContent
+        
+def readFile(fileName: str)-> List[str]:
     try:
-        file = open("README.md", "w")
+        fHanddler = open(fileName, "r")
+        lines = fHanddler.readlines()
+    except:
+        print("Error: File " + fileName + " could not be read.")
+    return lines
+
+def writeToFile(fileName: str, content: str):
+    try:
+        file = open(fileName, "w")
         file.write(content)
         print("File writed.")
     except:
