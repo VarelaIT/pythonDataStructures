@@ -1,3 +1,4 @@
+import lists
 import strings
 import files
 import strings.stringDoc
@@ -18,6 +19,7 @@ footer = """
 content = title 
 content += stringsSection
 content += filesSection
+content += lists.section
 content += footer
 
 files.writeToFile(fileName, content)

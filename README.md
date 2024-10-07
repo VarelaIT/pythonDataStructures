@@ -68,12 +68,12 @@ Mode is an optional string that specifies the mode in which the file is opened. 
 |Char|Meaning|
 |----|-------|
 |'r'|open for reading (default)|
-|'w'| open for writing, truncating the file first|
-|'x'| open for exclusive creation, failing if the file already exists|
-|'a'| open for writing, appending to the end of file if it exists|
-|'b'| binary mode|
-|'t'| text mode (default)|
-|'+'| open for updating (reading and writing)|
+|'w'|open for writing, truncating the file first|
+|'x'|open for exclusive creation, failing if the file already exists|
+|'a'|open for writing, appending to the end of file if it exists|
+|'b'|binary mode|
+|'t'|text mode (default)|
+|'+'|open for updating (reading and writing)|
 
 Example of the code that writes this document:
 ```python
@@ -110,6 +110,22 @@ A string is a sequence of characters.
 ```python
 oneString = "hello" #>>> hello
 
+```
+
+
+## Lists
+
+List are collection of data.
+```python
+stringList = ["This", "is", "Sparta!"]
+len(stringList) # returns 3
+```
+
+The `range` function an integer representing a size 
+and returns a list ordered numbers starting from 0.
+```python
+for i in range(len(stringList)):
+    print(i, stringList[i])
 ```
 
 
