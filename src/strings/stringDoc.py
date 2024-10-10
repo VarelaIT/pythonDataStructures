@@ -43,6 +43,17 @@ for letter in greetting:
 #>> d
 #>> !
 ```
+
+### String methods
+
+### `split`
+
+The `split` method divide the `string` by the white spaces, returning a `list` with the resulting strings.
+It takes an optional `string` argument in order to change the delimiter.
+```python
+sentence = "With three words."
+words = sentence.split() # returns ["With", "three", "words."]
+```
 """
 
 def stringSection() -> str:

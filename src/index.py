@@ -1,3 +1,4 @@
+import dictionaries
 import lists
 import strings
 import files
@@ -20,6 +21,7 @@ content = title
 content += stringsSection
 content += filesSection
 content += lists.section
+content += dictionaries.section
 content += footer
 
 files.writeToFile(fileName, content)
