@@ -348,7 +348,6 @@ sortedList = tuples.sortDictByValue(tuples.wordCount(files.readFile(fileName)))
 ```
 Here the result:
 
-
 |Word|Times|
 |----|-----|
 |the|59|
