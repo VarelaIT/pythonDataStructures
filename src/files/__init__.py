@@ -61,9 +61,8 @@ subContent = """
 
 """
 
-def getSectionContent(fileName: str, preContent: str, subContent: str)-> str:
+def getSectionContent(lines: List[str], preContent: str, subContent: str)-> str:
     result = preContent
-    lines = readFile(fileName)
     index = 0
     linesCount = len(lines)
     limit = 10
